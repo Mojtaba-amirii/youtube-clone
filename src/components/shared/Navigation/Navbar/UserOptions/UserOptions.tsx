@@ -1,3 +1,5 @@
+"use client";
+
 import SignInButton from "./SignInButton";
 
 const UserOptions = () => {
