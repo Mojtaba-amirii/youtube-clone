@@ -17,6 +17,7 @@ const IconButton: FC<PropsWithChildren<IconButtonProps>> = ({
       className={` cursor-pointer rounded-full p-2 hover:bg-neutral-800 ${className}`}
       onClick={onClick}
       type="button"
+      title="menu"
     >
       {children}
     </button>

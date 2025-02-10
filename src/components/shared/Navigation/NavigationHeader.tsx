@@ -1,7 +1,9 @@
 "use client";
 
 import { MdMenu } from "react-icons/md";
+
 import IconButton from "../IconButton";
+import Logo from "../Logo";
 
 const NavigationHeader = () => {
   return (
@@ -9,6 +11,7 @@ const NavigationHeader = () => {
       <IconButton>
         <MdMenu className=" h-6 w-6" />
       </IconButton>
+      <Logo />
     </div>
   );
 };
