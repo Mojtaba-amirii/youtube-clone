@@ -1,7 +1,10 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+
+import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/components/shared/Navigation/Navigation";
+import CurrentUserProvider from "@/context/CurrentUserContext";
+import getCurrentUser from "@/actions/getCurrent";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,18 +23,22 @@ export const metadata: Metadata = {
   description: "Broadcast yourself",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const currentUser = await getCurrentUser();
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen w-screen text-white bg-stone-950`}
       >
-        <Navigation />
-        <main className=" mt-16">{children}</main>
+        <CurrentUserProvider user={currentUser}>
+          <Navigation />
+          <main className=" mt-16">{children}</main>
+        </CurrentUserProvider>
       </body>
     </html>
   );
