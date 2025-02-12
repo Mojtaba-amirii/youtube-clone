@@ -1,13 +1,16 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 
-import type { Metadata } from "next";
 import "./globals.css";
+import type { Metadata } from "next";
 import Navigation from "@/components/shared/Navigation/Navigation";
 import CurrentUserProvider from "@/context/CurrentUserContext";
-import getCurrentUser from "@/actions/getCurrent";
+import getCurrentUser from "@/actions/getCurrentUser";
 import CreateChannelModalProvider from "@/context/CreateChannelModalContext";
 import CreateChannelModal from "@/components/shared/Modal/CreateChannelModal";
+import getCurrentChannel from "@/actions/getCurrentChannel";
+import CurrentChannelProvider from "@/context/CurrentChannelContext";
+import UploadVideoModalProvider from "@/context/UploadVidoeModalContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +35,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const currentUser = await getCurrentUser();
+  const currentChannel = await getCurrentChannel();
 
   return (
     <html lang="en">
@@ -46,8 +50,12 @@ export default async function RootLayout({
             }}
           />
           <CurrentUserProvider user={currentUser}>
-            <Navigation />
-            <main className=" mt-16">{children}</main>
+            <CurrentChannelProvider channel={currentChannel}>
+              <UploadVideoModalProvider>
+                <Navigation />
+                <main className=" mt-16">{children}</main>
+              </UploadVideoModalProvider>
+            </CurrentChannelProvider>
           </CurrentUserProvider>
         </CreateChannelModalProvider>
       </body>
