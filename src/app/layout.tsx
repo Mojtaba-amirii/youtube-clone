@@ -1,10 +1,13 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 
 import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/components/shared/Navigation/Navigation";
 import CurrentUserProvider from "@/context/CurrentUserContext";
 import getCurrentUser from "@/actions/getCurrent";
+import CreateChannelModalProvider from "@/context/CreateChannelModalContext";
+import CreateChannelModal from "@/components/shared/Modal/CreateChannelModal";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,10 +38,18 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen w-screen text-white bg-stone-950`}
       >
-        <CurrentUserProvider user={currentUser}>
-          <Navigation />
-          <main className=" mt-16">{children}</main>
-        </CurrentUserProvider>
+        <CreateChannelModalProvider>
+          <CreateChannelModal />
+          <Toaster
+            toastOptions={{
+              position: "bottom-left",
+            }}
+          />
+          <CurrentUserProvider user={currentUser}>
+            <Navigation />
+            <main className=" mt-16">{children}</main>
+          </CurrentUserProvider>
+        </CreateChannelModalProvider>
       </body>
     </html>
   );

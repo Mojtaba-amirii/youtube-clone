@@ -31,6 +31,7 @@ const Avatar: FC<AvatarProps> = ({
       width={size}
       height={size}
       src={imageSrc || "/images/avatarph.jpg"}
+      priority
     />
   );
 };
