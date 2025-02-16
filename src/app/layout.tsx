@@ -10,7 +10,7 @@ import CreateChannelModalProvider from "@/context/CreateChannelModalContext";
 import CreateChannelModal from "@/components/shared/Modal/CreateChannelModal";
 import getCurrentChannel from "@/actions/getCurrentChannel";
 import CurrentChannelProvider from "@/context/CurrentChannelContext";
-import UploadVideoModalProvider from "@/context/UploadVidoeModalContext";
+import UploadVideoModalProvider from "@/context/UploadVideoModalContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

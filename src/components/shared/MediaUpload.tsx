@@ -29,7 +29,7 @@ const MediaUpload: FC<PropsWithChildren<MediaUploadProps>> = ({
       {({ open }) => (
         <div
           onClick={() => open && open()}
-          className="flex items-center justify-center w-24 h-24 bg-zinc-600 rounded-full"
+          className="flex items-center justify-center w-24 h-24 rounded-full"
         >
           {children}
         </div>
