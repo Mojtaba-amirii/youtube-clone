@@ -24,7 +24,7 @@ const Avatar: FC<AvatarProps> = ({
   return (
     <Image
       alt="Avatar"
-      className={` rounded-full aspect-square object-contain ${
+      className={` rounded-full aspect-square object-fill ${
         onClick && " cursor-pointer"
       } ${className}`}
       onClick={onClick}
