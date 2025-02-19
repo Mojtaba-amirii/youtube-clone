@@ -8,6 +8,7 @@ import { CurrentUserContext } from "@/context/CurrentUserContext";
 import Avatar, { AvatarSize } from "../shared/Avatar";
 import { compactNumberFormatter } from "@/utils/numUtils";
 import Button from "../shared/Button";
+import SubscribeButton from "../shared/SubscribeButton";
 
 interface ChannelHeaderProps {
   channel: Channel;
@@ -39,7 +40,7 @@ const ChannelHeader: FC<ChannelHeaderProps> = ({ channel, videoCount }) => {
           <Button type="rounded-dark">Manage Videos</Button>
         </Link>
       ) : (
-        <div>Subscribe now</div>
+        <SubscribeButton channelId={channel.id} />
       )}
     </div>
   );
