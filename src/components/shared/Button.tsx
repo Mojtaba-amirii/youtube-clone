@@ -4,7 +4,7 @@ import { FC, MouseEventHandler, PropsWithChildren, useMemo } from "react";
 
 interface ButtonProps {
   onClick?: MouseEventHandler<HTMLButtonElement>;
-  type: "primary" | "secondary" | "box" | "rounded" | "rounded-dark";
+  type: "primary" | "secondary" | "box" | "rounded-sm" | "rounded-dark";
   className?: string;
 }
 
@@ -21,8 +21,8 @@ const Button: FC<PropsWithChildren<ButtonProps>> = ({
       case "secondary":
         return " uppercase text-sm";
       case "box":
-        return "bg-neutral-900 uppercase font-medium bg-sky-500 rounded-sm px-4 py-2";
-      case "rounded":
+        return "bg-neutral-900 uppercase font-medium bg-sky-500 rounded-xs px-4 py-2";
+      case "rounded-sm":
         return "bg-stone-950 font-medium bg-zinc-300 rounded-full px-3 py-2";
       case "rounded-dark":
         return "bg-neutral-800 text-white rounded-full font-medium px-3 py-2";

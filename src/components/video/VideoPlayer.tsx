@@ -169,7 +169,7 @@ const VideoPlayer: FC<VideoPlayerProps> = ({ videoSrc }) => {
   return (
     <div className=" relative w-full max-w-[1000px] flex justify-center m-auto group bg-black">
       <div
-        className={` absolute bottom-0 left-0 right-0 text-white bg-gradient-to-t from-black/40 z-10 opacity-0 transition-opacity group-hover:opacity-100 cursor-pointer `}
+        className={` absolute bottom-0 left-0 right-0 text-white bg-linear-to-t from-black/40 z-10 opacity-0 transition-opacity group-hover:opacity-100 cursor-pointer`}
       >
         <div className="flex items-center cursor-pointer mx-2 h-2 group/timeline">
           <div
@@ -194,7 +194,7 @@ const VideoPlayer: FC<VideoPlayerProps> = ({ videoSrc }) => {
               type="button"
               title="play-pause"
               onClick={handlePlay}
-              className=" opacity-70 transition-opacity hover:opacity-100"
+              className=" opacity-70 transition-opacity hover:opacity-100 cursor-pointer"
             >
               {isPlaying ? <MdPause /> : <MdPlayArrow />}
             </button>
@@ -203,7 +203,7 @@ const VideoPlayer: FC<VideoPlayerProps> = ({ videoSrc }) => {
                 type="button"
                 title="volume"
                 onClick={handleMute}
-                className=" opacity-70 transition-opacity hover:opacity-100"
+                className=" opacity-70 transition-opacity hover:opacity-100 cursor-pointer"
               >
                 {videoRef.current?.muted ? (
                   <MdVolumeOff />
@@ -221,7 +221,7 @@ const VideoPlayer: FC<VideoPlayerProps> = ({ videoSrc }) => {
                 step="any"
                 value={volume}
                 onChange={handleChangeVolume}
-                className=" w-0 scale-0 group-hover/volume:w-20 group-hover/volume:scale-100 transition-all duration-200 origin-left accent-white"
+                className=" w-0 scale-0 group-hover/volume:w-20 group-hover/volume:scale-100 transition-all duration-200 origin-left accent-white cursor-pointer"
               />
             </div>
             <div className=" text-sm">
@@ -233,7 +233,7 @@ const VideoPlayer: FC<VideoPlayerProps> = ({ videoSrc }) => {
               type="button"
               title="fullscreen-mode"
               onClick={handleFullScreen}
-              className=" opacity-70 transition-opacity hover:opacity-100"
+              className=" opacity-70 transition-opacity hover:opacity-100 cursor-pointer"
             >
               {isFullScreen ? <MdFullscreenExit /> : <MdFullscreen />}
             </button>
@@ -245,7 +245,7 @@ const VideoPlayer: FC<VideoPlayerProps> = ({ videoSrc }) => {
         ref={videoRef}
         onClick={handlePlay}
         onTimeUpdate={updateTimestamp}
-        className=" w-full aspect-video z-[5]"
+        className=" w-full aspect-video z-5"
       ></video>
     </div>
   );

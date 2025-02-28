@@ -14,7 +14,7 @@ const SubscribeButton: FC<SubscribeButtonProps> = ({ channelId }) => {
 
   return (
     <Button
-      type={hasSubscribed ? "rounded-dark" : "rounded"}
+      type={hasSubscribed ? "rounded-dark" : "rounded-sm"}
       onClick={toggleSubscribed}
     >
       {hasSubscribed ? "Subscribed" : "Subscribe"}
