@@ -19,7 +19,7 @@ const Button: FC<PropsWithChildren<ButtonProps>> = ({
       case "primary":
         return " text-blue-400 uppercase text-sm cursor-pointer";
       case "secondary":
-        return " uppercase text-sm";
+        return " uppercase text-sm cursor-pointer";
       case "box":
         return "bg-neutral-900 uppercase font-medium bg-sky-500 rounded-xs px-4 py-2 cursor-pointer";
       case "rounded-sm":
