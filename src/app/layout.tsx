@@ -46,7 +46,7 @@ export default async function RootLayout({
           <CreateChannelModal />
           <Toaster
             toastOptions={{
-              position: "bottom-left",
+              position: "bottom-right",
             }}
           />
           <CurrentUserProvider user={currentUser}>
