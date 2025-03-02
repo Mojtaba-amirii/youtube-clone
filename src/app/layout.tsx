@@ -11,6 +11,7 @@ import CreateChannelModal from "@/components/shared/Modal/CreateChannelModal";
 import getCurrentChannel from "@/actions/getCurrentChannel";
 import CurrentChannelProvider from "@/context/CurrentChannelContext";
 import UploadVideoModalProvider from "@/context/UploadVideoModalContext";
+import SidebarContextProvider from "@/context/SidebarContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -52,8 +53,10 @@ export default async function RootLayout({
           <CurrentUserProvider user={currentUser}>
             <CurrentChannelProvider channel={currentChannel}>
               <UploadVideoModalProvider>
-                <Navigation />
-                <main className=" mt-16">{children}</main>
+                <SidebarContextProvider>
+                  <Navigation />
+                  <main className=" mt-16">{children}</main>
+                </SidebarContextProvider>
               </UploadVideoModalProvider>
             </CurrentChannelProvider>
           </CurrentUserProvider>
