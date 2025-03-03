@@ -6,7 +6,7 @@ import getCommentsByVideoId from "@/actions/getCommentsByVideoId";
 import { getRecommendedVideos } from "@/actions/getRecommendedVideos";
 import increaseVideoViewCount from "@/actions/increaseVideoViewCount";
 import CommentSection from "@/components/video/CommentSection/CommentSection";
-import LikeSubscribeSection from "@/components/video/LikeSubscribeSection/LikeSubscribeSection";
+import LikeSubscribeSection from "@/components/video/likeSubscribeSection/LikeSubscribeSection";
 
 interface VideoPageParams {
   videoId?: string;
