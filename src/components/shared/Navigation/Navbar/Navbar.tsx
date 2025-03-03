@@ -1,5 +1,5 @@
 import NavigationHeader from "../NavigationHeader";
-import Search from "./Search";
+import Search from "../../../search/Search";
 import UserOptions from "./UserOptions/UserOptions";
 
 const Navbar = () => {

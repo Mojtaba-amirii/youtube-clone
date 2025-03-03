@@ -7,7 +7,10 @@ interface IParams {
   videoId?: string;
 }
 
-export async function DELETE(_: Request, { params }: { params: IParams }) {
+export async function DELETE(
+  _: Request,
+  { params }: { params: Promise<IParams> }
+) {
   const currentChannel = await getCurrentChannel();
 
   if (!currentChannel) {
@@ -16,7 +19,7 @@ export async function DELETE(_: Request, { params }: { params: IParams }) {
 
   const video = await prisma.video.delete({
     where: {
-      id: params.videoId,
+      id: (await params).videoId,
     },
   });
 

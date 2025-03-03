@@ -10,7 +10,7 @@ interface ChannelPageParams {
 export default async function ChannelPage({
   params,
 }: {
-  params: ChannelPageParams;
+  params: Promise<ChannelPageParams>;
 }) {
   const { channelId } = await params;
 

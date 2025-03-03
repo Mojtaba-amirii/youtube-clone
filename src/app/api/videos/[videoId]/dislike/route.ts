@@ -7,7 +7,10 @@ interface IParams {
   videoId: string;
 }
 
-export async function POST(_: Request, { params }: { params: IParams }) {
+export async function POST(
+  _: Request,
+  { params }: { params: Promise<IParams> }
+) {
   const currentUser = await getCurrentUser();
   const { videoId } = await params;
 
@@ -40,7 +43,10 @@ export async function POST(_: Request, { params }: { params: IParams }) {
   return NextResponse.json({ user, video });
 }
 
-export async function DELETE(_: Request, { params }: { params: IParams }) {
+export async function DELETE(
+  _: Request,
+  { params }: { params: Promise<IParams> }
+) {
   const currentUser = await getCurrentUser();
   const { videoId } = await params;
 

@@ -15,7 +15,7 @@ interface VideoPageParams {
 export default async function VideoPage({
   params,
 }: {
-  params: VideoPageParams;
+  params: Promise<VideoPageParams>;
 }) {
   const { videoId } = await params;
   const video = await increaseVideoViewCount({ videoId });
