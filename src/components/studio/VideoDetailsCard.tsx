@@ -46,7 +46,7 @@ const VideoDetailsCard: FC<VideoDetailsCardProps> = ({ video }) => {
           alt={`${video.title} thumbnail`}
           width={170}
           height={110}
-          className=" aspect-video"
+          className=" aspect-video w-auto"
         />
       </Link>
 
