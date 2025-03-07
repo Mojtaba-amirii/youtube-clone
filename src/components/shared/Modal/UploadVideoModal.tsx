@@ -1,13 +1,13 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { FC, useContext } from "react";
+import { useRouter } from "next/navigation";
 import { MdClose, MdUpload } from "react-icons/md";
 
-import { UploadVideoModalContext } from "@/context/UploadVideoModalContext";
-import MediaUpload from "../MediaUpload";
-import IconButton from "../IconButton";
 import Button from "../Button";
+import IconButton from "../IconButton";
+import MediaUpload from "../MediaUpload";
+import { UploadVideoModalContext } from "@/context/UploadVideoModalContext";
 
 interface UploadVideoModalProps {
   onUpload: (value: string) => void;

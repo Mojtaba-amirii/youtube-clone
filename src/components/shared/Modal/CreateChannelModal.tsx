@@ -1,15 +1,15 @@
 "use client";
 
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { useContext, useTransition } from "react";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
-import Avatar, { AvatarSize } from "../Avatar";
-import Button from "../Button";
 import Input from "../Input";
+import Button from "../Button";
 import MediaUpload from "../MediaUpload";
+import Avatar, { AvatarSize } from "../Avatar";
 import { CreateChannelModalContext } from "@/context/CreateChannelModalContext";
 
 const CreateChannelModal = () => {
