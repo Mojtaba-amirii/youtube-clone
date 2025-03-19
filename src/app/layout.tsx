@@ -1,6 +1,6 @@
 export const dynamic = "force-dynamic";
-import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "react-hot-toast";
+import { Geist, Geist_Mono } from "next/font/google";
 
 import "./globals.css";
 import type { Metadata } from "next";
@@ -56,7 +56,7 @@ export default async function RootLayout({
               <UploadVideoModalProvider>
                 <SidebarContextProvider>
                   <Navigation />
-                  <main className=" mt-16">{children}</main>
+                  <main className="mt-16">{children}</main>
                 </SidebarContextProvider>
               </UploadVideoModalProvider>
             </CurrentChannelProvider>
