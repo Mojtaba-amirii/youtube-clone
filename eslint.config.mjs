@@ -1,27 +1,28 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTs from "eslint-config-next/typescript";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  ...nextTs,
   {
-    ignores: [
-      "node_modules/**",
-      ".next/**",
-      "out/**",
-      "build/**",
-      "next-env.d.ts",
-      "prisma/**",
-      "coverage/**",
-    ],
+    rules: {
+      // Disable React Compiler incompatible library warning for React Hook Form
+      "react-hooks/incompatible-library": "off",
+    },
   },
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
-];
+  // Override default ignores of eslint-config-next.
+  globalIgnores([
+    // Default ignores of eslint-config-next:
+    ".next/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+    // Additional ignores:
+    "node_modules/**",
+    "prisma/**",
+    "coverage/**",
+  ]),
+]);
 
 export default eslintConfig;
