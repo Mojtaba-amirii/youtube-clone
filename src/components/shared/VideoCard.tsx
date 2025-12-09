@@ -1,10 +1,11 @@
-import { Channel, Video } from "@prisma/client";
-import Image from "next/image";
-import Link from "next/link";
 import { FC } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Channel, Video } from "@prisma/client";
+
+import dayjs from "@/vendor/dayjs";
 import Avatar, { AvatarSize } from "./Avatar";
 import { compactNumberFormatter } from "@/utils/numUtils";
-import dayjs from "@/vendor/dayjs";
 
 interface VideoCardProps {
   channel?: Channel;

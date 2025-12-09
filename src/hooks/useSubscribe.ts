@@ -1,7 +1,7 @@
-import { useCallback, useContext, useMemo } from "react";
-import { useRouter } from "next/navigation";
-import toast from "react-hot-toast";
 import axios from "axios";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
+import { useCallback, useContext, useMemo } from "react";
 
 import { CurrentUserContext } from "@/context/CurrentUserContext";
 

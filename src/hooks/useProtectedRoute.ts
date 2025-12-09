@@ -1,8 +1,8 @@
 import { useRouter } from "next/navigation";
 import { useContext, useEffect } from "react";
 
-import { CurrentChannelContext } from "@/context/CurrentChannelContext";
 import { CurrentUserContext } from "@/context/CurrentUserContext";
+import { CurrentChannelContext } from "@/context/CurrentChannelContext";
 
 interface UseProtectedRouteProps {
   checkChannel?: boolean;

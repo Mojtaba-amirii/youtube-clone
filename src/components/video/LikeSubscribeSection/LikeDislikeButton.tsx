@@ -9,8 +9,8 @@ import {
   MdThumbUp,
 } from "react-icons/md";
 
-import { LikeDislikeStatus, useLikeDislike } from "@/hooks/useLikeDislike";
 import { compactNumberFormatter } from "@/utils/numUtils";
+import { LikeDislikeStatus, useLikeDislike } from "@/hooks/useLikeDislike";
 
 interface LikeDislikeButtonProps {
   video: Video;

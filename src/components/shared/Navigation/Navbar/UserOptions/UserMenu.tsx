@@ -1,11 +1,11 @@
 import { FC, useContext } from "react";
-import { PiUserSquareFill, PiYoutubeLogo, PiSignOut } from "react-icons/pi";
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { PiUserSquareFill, PiYoutubeLogo, PiSignOut } from "react-icons/pi";
 
 import MenuItem from "./MenuItem";
-import { CreateChannelModalContext } from "@/context/CreateChannelModalContext";
 import { CurrentChannelContext } from "@/context/CurrentChannelContext";
+import { CreateChannelModalContext } from "@/context/CreateChannelModalContext";
 
 interface UserMenuProps {
   onClose: () => void;

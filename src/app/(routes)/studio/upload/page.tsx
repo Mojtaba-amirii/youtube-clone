@@ -1,18 +1,18 @@
 "use client";
 
-import { useContext, useEffect, useMemo, useTransition } from "react";
-import { useForm, FieldValues, SubmitHandler } from "react-hook-form";
-import { useRouter } from "next/navigation";
+import axios from "axios";
 import { v4 as uuid } from "uuid";
 import { toast } from "react-hot-toast";
-import axios from "axios";
+import { useRouter } from "next/navigation";
+import { useContext, useEffect, useMemo, useTransition } from "react";
+import { useForm, FieldValues, SubmitHandler } from "react-hook-form";
 
+import Button from "@/components/shared/Button";
+import { useProtectedRoute } from "@/hooks/useProtectedRoute";
+import VideoPreview from "@/components/studio/upload/VideoPreview";
+import VideoUploadFrom from "@/components/studio/upload/VideoUploadFrom";
 import UploadVideoModal from "@/components/shared/Modal/UploadVideoModal";
 import { UploadVideoModalContext } from "@/context/UploadVideoModalContext";
-import Button from "@/components/shared/Button";
-import VideoUploadFrom from "@/components/studio/upload/VideoUploadFrom";
-import VideoPreview from "@/components/studio/upload/VideoPreview";
-import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 
 export default function UploadPage() {
   useProtectedRoute();
@@ -26,8 +26,7 @@ export default function UploadPage() {
     return uuidString.replace(/-/g, "");
   }, []);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => uploadVideoModal?.onOpen(), []);
+  useEffect(() => uploadVideoModal?.onOpen(), [uploadVideoModal]);
 
   const {
     register,

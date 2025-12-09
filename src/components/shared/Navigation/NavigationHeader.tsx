@@ -1,7 +1,7 @@
 "use client";
 
-import { MdMenu } from "react-icons/md";
 import { useContext } from "react";
+import { MdMenu } from "react-icons/md";
 
 import Logo from "../Logo";
 import IconButton from "../IconButton";

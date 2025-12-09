@@ -1,14 +1,14 @@
 "use client";
 
-import { Channel } from "@prisma/client";
-import { FC, useContext } from "react";
 import Link from "next/link";
+import { FC, useContext } from "react";
+import { Channel } from "@prisma/client";
 
-import { CurrentUserContext } from "@/context/CurrentUserContext";
-import Avatar, { AvatarSize } from "../shared/Avatar";
-import { compactNumberFormatter } from "@/utils/numUtils";
 import Button from "../shared/Button";
+import Avatar, { AvatarSize } from "../shared/Avatar";
 import SubscribeButton from "../shared/SubscribeButton";
+import { compactNumberFormatter } from "@/utils/numUtils";
+import { CurrentUserContext } from "@/context/CurrentUserContext";
 
 interface ChannelHeaderProps {
   channel: Channel;

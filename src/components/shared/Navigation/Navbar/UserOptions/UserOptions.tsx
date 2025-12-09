@@ -1,14 +1,14 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useContext, useState } from "react";
 import { MdOutlineVideoCall } from "react-icons/md";
-import { useRouter } from "next/navigation";
 
+import UserMenu from "./UserMenu";
 import SignInButton from "./SignInButton";
-import { CurrentUserContext } from "@/context/CurrentUserContext";
 import IconButton from "@/components/shared/IconButton";
 import Avatar, { AvatarSize } from "@/components/shared/Avatar";
-import UserMenu from "./UserMenu";
+import { CurrentUserContext } from "@/context/CurrentUserContext";
 import { CurrentChannelContext } from "@/context/CurrentChannelContext";
 import { CreateChannelModalContext } from "@/context/CreateChannelModalContext";
 

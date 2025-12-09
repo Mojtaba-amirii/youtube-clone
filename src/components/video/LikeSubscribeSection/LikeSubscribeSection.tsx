@@ -4,12 +4,12 @@ import Link from "next/link";
 import { FC, useContext } from "react";
 import { Channel, Video } from "@prisma/client";
 
-import { CurrentUserContext } from "@/context/CurrentUserContext";
-import LikeDislikeButton from "./LikeDislikeButton";
-import Avatar, { AvatarSize } from "@/components/shared/Avatar";
-import { compactNumberFormatter } from "@/utils/numUtils";
-import SubscribeButton from "@/components/shared/SubscribeButton";
 import Button from "@/components/shared/Button";
+import LikeDislikeButton from "./LikeDislikeButton";
+import { compactNumberFormatter } from "@/utils/numUtils";
+import Avatar, { AvatarSize } from "@/components/shared/Avatar";
+import { CurrentUserContext } from "@/context/CurrentUserContext";
+import SubscribeButton from "@/components/shared/SubscribeButton";
 
 interface LikeSubscribeSectionProps {
   channel: Channel;

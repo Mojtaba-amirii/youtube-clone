@@ -1,12 +1,12 @@
 "use client";
 
 import { FC } from "react";
-import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
 import Image from "next/image";
-
-import MediaUpload from "@/components/shared/MediaUpload";
-import TextArea from "@/components/shared/TextArea";
 import { FaRegSquarePlus } from "react-icons/fa6";
+import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
+
+import TextArea from "@/components/shared/TextArea";
+import MediaUpload from "@/components/shared/MediaUpload";
 
 interface VideoUploadFromProps {
   register: UseFormRegister<FieldValues>;

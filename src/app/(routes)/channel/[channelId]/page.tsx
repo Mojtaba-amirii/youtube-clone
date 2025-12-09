@@ -1,7 +1,7 @@
 import getChannelById from "@/actions/getChannelById";
-import getVideosByChannelId from "@/actions/getVideosByChannelId";
-import ChannelHeader from "@/components/channel/ChannelHeader";
 import VideoCard from "@/components/shared/VideoCard";
+import ChannelHeader from "@/components/channel/ChannelHeader";
+import getVideosByChannelId from "@/actions/getVideosByChannelId";
 
 interface ChannelPageParams {
   channelId?: string;

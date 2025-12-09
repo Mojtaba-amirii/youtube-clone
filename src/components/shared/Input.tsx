@@ -46,7 +46,7 @@ const Input: FC<InputProps> = ({
         } disabled:opacity-70 disabled:cursor-not-allowed`}
       />
       <label
-        className={`absolute bg-zinc-800 px-1 top-2 left-4 z-1 duration-100 -translate-y-5 transform origin-[0px] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-5 ${
+        className={`absolute bg-zinc-800 px-1 top-2 left-4 z-1 duration-100 -translate-y-5 transform origin-left peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-5 ${
           errors[id] ? " text-red-500" : " text-zinc-500"
         }`}
         htmlFor={id}

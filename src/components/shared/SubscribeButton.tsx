@@ -2,8 +2,8 @@
 
 import { FC } from "react";
 
-import useSubscribe from "@/hooks/useSubscribe";
 import Button from "./Button";
+import useSubscribe from "@/hooks/useSubscribe";
 
 interface SubscribeButtonProps {
   channelId: string;

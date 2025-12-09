@@ -1,9 +1,10 @@
 "use client";
 
-import IconButton from "@/components/shared/IconButton";
-import { FC, useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { FC, useEffect, useState } from "react";
 import { MdOutlineContentCopy } from "react-icons/md";
+
+import IconButton from "@/components/shared/IconButton";
 
 interface VideoPreviewProps {
   videoId: string;

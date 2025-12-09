@@ -1,7 +1,7 @@
 "use client";
 
-import { Video } from "@prisma/client";
 import { FC, useState } from "react";
+import { Video } from "@prisma/client";
 
 import { compactNumberFormatter } from "@/utils/numUtils";
 import dayjs from "@/vendor/dayjs";

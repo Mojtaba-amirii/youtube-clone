@@ -4,15 +4,15 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import "./globals.css";
 import type { Metadata } from "next";
-import Navigation from "@/components/shared/Navigation/Navigation";
-import CurrentUserProvider from "@/context/CurrentUserContext";
 import getCurrentUser from "@/actions/getCurrentUser";
-import CreateChannelModalProvider from "@/context/CreateChannelModalContext";
-import CreateChannelModal from "@/components/shared/Modal/CreateChannelModal";
 import getCurrentChannel from "@/actions/getCurrentChannel";
+import SidebarContextProvider from "@/context/SidebarContext";
+import CurrentUserProvider from "@/context/CurrentUserContext";
+import Navigation from "@/components/shared/Navigation/Navigation";
 import CurrentChannelProvider from "@/context/CurrentChannelContext";
 import UploadVideoModalProvider from "@/context/UploadVideoModalContext";
-import SidebarContextProvider from "@/context/SidebarContext";
+import CreateChannelModalProvider from "@/context/CreateChannelModalContext";
+import CreateChannelModal from "@/components/shared/Modal/CreateChannelModal";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

@@ -16,7 +16,7 @@ const AnalyticsSummeryItem: FC<AnalyticsSummeryItemProps> = ({
       <h1 className=" text-2xl lg:text-3xl">
         {value}
         {subtitle && (
-          <p className=" font-medium text-stone-400 lg:text-xl break-words">
+          <p className=" font-medium text-stone-400 lg:text-xl wrap-break-word">
             {subtitle}
           </p>
         )}

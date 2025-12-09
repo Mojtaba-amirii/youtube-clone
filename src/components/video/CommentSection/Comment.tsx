@@ -1,7 +1,7 @@
 "use client";
 
-import Avatar from "@/components/shared/Avatar";
 import dayjs from "@/vendor/dayjs";
+import Avatar from "@/components/shared/Avatar";
 import type { Channel, Comment } from "@prisma/client";
 
 import { FC } from "react";
