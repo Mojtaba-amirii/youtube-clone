@@ -167,7 +167,7 @@ const VideoPlayer: FC<VideoPlayerProps> = ({ videoSrc }) => {
   );
 
   return (
-    <div className=" relative w-full max-w-[1000px] flex justify-center m-auto group bg-black">
+    <div className=" relative w-full max-w-250 flex justify-center m-auto group bg-black">
       <div
         className={` absolute bottom-0 left-0 right-0 text-white bg-linear-to-t from-black/40 z-10 opacity-0 transition-opacity group-hover:opacity-100 cursor-pointer`}
       >
