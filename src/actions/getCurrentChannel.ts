@@ -1,7 +1,7 @@
 import { Channel } from "@prisma/client";
 
-import getCurrentUser from "./getCurrentUser";
 import prisma from "@/vendor/db";
+import getCurrentUser from "./getCurrentUser";
 
 export default async function getCurrentChannel(): Promise<Channel | null> {
   try {

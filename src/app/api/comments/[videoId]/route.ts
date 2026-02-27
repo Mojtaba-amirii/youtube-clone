@@ -8,7 +8,7 @@ interface IParams {
 
 export async function POST(
   request: Request,
-  { params }: { params: Promise<IParams> }
+  { params }: { params: Promise<IParams> },
 ) {
   const { videoId } = await params;
   const { text, channelId } = await request.json();

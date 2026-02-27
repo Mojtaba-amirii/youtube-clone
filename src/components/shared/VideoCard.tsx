@@ -88,7 +88,7 @@ const VideoCard: FC<VideoCardProps> = ({
                 <p key={index} className=" text-neutral-400 text-sm">
                   {line}
                 </p>
-              )
+              ),
             )}
         </div>
       </div>

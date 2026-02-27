@@ -6,7 +6,7 @@ interface increaseVideoViewCountParams {
 }
 
 export default async function increaseVideoViewCount(
-  params: increaseVideoViewCountParams
+  params: increaseVideoViewCountParams,
 ): Promise<Video | null> {
   try {
     const { videoId } = params;

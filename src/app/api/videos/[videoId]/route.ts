@@ -9,7 +9,7 @@ interface IParams {
 
 export async function DELETE(
   _: Request,
-  { params }: { params: Promise<IParams> }
+  { params }: { params: Promise<IParams> },
 ) {
   const currentChannel = await getCurrentChannel();
 

@@ -79,7 +79,7 @@ export const useLikeDislike = ({ videoId }: UseLikeDislikeProps) => {
         toast.error("There was an error");
       }
     },
-    [currentUser, videoId, likeDislikeStatus, router]
+    [currentUser, videoId, likeDislikeStatus, router],
   );
 
   return {

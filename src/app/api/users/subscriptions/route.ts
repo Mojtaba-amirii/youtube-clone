@@ -50,7 +50,7 @@ export async function DELETE(request: Request) {
   });
 
   const subscribedChannelIds = currentUser.subscribedChannelIds.filter(
-    (id) => id !== channelId
+    (id) => id !== channelId,
   );
 
   subscribedChannelIds.push(channelId);

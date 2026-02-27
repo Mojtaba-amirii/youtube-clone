@@ -9,7 +9,7 @@ interface IParams {
 
 export async function POST(
   _: Request,
-  { params }: { params: Promise<IParams> }
+  { params }: { params: Promise<IParams> },
 ) {
   const currentUser = await getCurrentUser();
   const { videoId } = await params;
@@ -45,7 +45,7 @@ export async function POST(
 
 export async function DELETE(
   _: Request,
-  { params }: { params: Promise<IParams> }
+  { params }: { params: Promise<IParams> },
 ) {
   const currentUser = await getCurrentUser();
   const { videoId } = await params;
@@ -55,7 +55,7 @@ export async function DELETE(
   }
 
   const dislikedVideoIds = currentUser.dislikedVideoIds.filter(
-    (dislikedVideoId) => dislikedVideoId !== videoId
+    (dislikedVideoId) => dislikedVideoId !== videoId,
   );
 
   const video = await prisma.video.update({

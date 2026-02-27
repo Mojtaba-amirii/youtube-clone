@@ -29,7 +29,7 @@ const ChannelHeader: FC<ChannelHeaderProps> = ({ channel, videoCount }) => {
           <div className=" flex flex-col md:flex-row items-center gap-1 md:gap-3 text-stone-400">
             <p className=" font-medium">{`@${channel.handle}`}</p>
             <span>{`${compactNumberFormatter(
-              channel.subscriberCount
+              channel.subscriberCount,
             )} subscribers`}</span>
             <span>{`${compactNumberFormatter(videoCount)} videos`}</span>
           </div>

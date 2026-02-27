@@ -19,7 +19,7 @@ const AnalyticsSummery: FC<AnalyticsSummeryProps> = ({ videos }) => {
   const viewsCount = useMemo(
     () =>
       videos?.reduce((totalViews, video) => totalViews + video.viewCount, 0),
-    [videos]
+    [videos],
   );
 
   return (

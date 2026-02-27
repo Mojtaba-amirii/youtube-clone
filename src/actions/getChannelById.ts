@@ -7,7 +7,7 @@ interface GetChannelByIdParams {
 }
 
 export default async function getChannelById(
-  params: GetChannelByIdParams
+  params: GetChannelByIdParams,
 ): Promise<Channel | null> {
   try {
     const { channelId } = params;

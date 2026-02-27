@@ -65,7 +65,7 @@ const VideoPlayer: FC<VideoPlayerProps> = ({ videoSrc }) => {
         }
       }
     },
-    [handleMute]
+    [handleMute],
   );
 
   const handleFullScreen = useCallback(() => {
@@ -104,7 +104,7 @@ const VideoPlayer: FC<VideoPlayerProps> = ({ videoSrc }) => {
           return;
       }
     },
-    [handlePlay, handleFullScreen, handleMute]
+    [handlePlay, handleFullScreen, handleMute],
   );
 
   useEffect(() => {
@@ -128,17 +128,17 @@ const VideoPlayer: FC<VideoPlayerProps> = ({ videoSrc }) => {
         return `${minutes}:${timestampFormatter.format(seconds)}`;
       } else {
         return `${hours}:${timestampFormatter.format(
-          minutes
+          minutes,
         )}:${timestampFormatter.format(seconds)}`;
       }
     },
-    [timestampFormatter]
+    [timestampFormatter],
   );
 
   const totalDuration = useMemo(
     () => formatTimestamp(videoRef.current?.duration || 0),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
+    [],
   );
 
   const updateTimestamp = () => {
@@ -146,8 +146,8 @@ const VideoPlayer: FC<VideoPlayerProps> = ({ videoSrc }) => {
     setPercentCompleted(
       Math.round(
         (1000 * (videoRef.current?.currentTime || 0)) /
-          (videoRef.current?.duration || 1)
-      ) / 1000
+          (videoRef.current?.duration || 1),
+      ) / 1000,
     );
   };
 
@@ -163,7 +163,7 @@ const VideoPlayer: FC<VideoPlayerProps> = ({ videoSrc }) => {
         videoRef.current.currentTime = newTime * videoRef.current.duration;
       }
     },
-    [timelineRef, videoRef]
+    [timelineRef, videoRef],
   );
 
   return (

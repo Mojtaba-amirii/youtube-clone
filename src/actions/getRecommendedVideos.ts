@@ -7,7 +7,7 @@ interface getRecommendedVideosParams {
 }
 
 export async function getRecommendedVideos(
-  params: getRecommendedVideosParams
+  params: getRecommendedVideosParams,
 ): Promise<(Video & { channel: Channel })[]> {
   const { video } = await params;
 
