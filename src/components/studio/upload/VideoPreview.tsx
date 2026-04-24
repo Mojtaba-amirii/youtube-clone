@@ -1,7 +1,7 @@
 "use client";
 
 import toast from "react-hot-toast";
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { MdOutlineContentCopy } from "react-icons/md";
 
 import IconButton from "@/components/shared/IconButton";
@@ -12,11 +12,8 @@ interface VideoPreviewProps {
 }
 
 const VideoPreview: FC<VideoPreviewProps> = ({ videoId, videoSrc }) => {
-  const [videoLink, setVideoLink] = useState<string>("");
-
-  useEffect(() => {
-    setVideoLink(`${window.location.host}/video/${videoId}`);
-  }, [videoId]);
+  const host = typeof window !== "undefined" ? window.location.host : "";
+  const videoLink = host ? `${host}/video/${videoId}` : "";
 
   const copyLink = () => {
     navigator.clipboard
@@ -41,7 +38,7 @@ const VideoPreview: FC<VideoPreviewProps> = ({ videoId, videoSrc }) => {
       <div className=" bg-stone-900 p-4 flex justify-between items-center">
         <div className=" w-4/5 truncate">
           <div className=" text-sm text-zinc-400">Video link</div>
-          <a href={videoSrc} className=" text-sky-500">
+          <a href={videoSrc} className=" text-sky-500" suppressHydrationWarning>
             {videoLink}
           </a>
         </div>

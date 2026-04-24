@@ -29,7 +29,8 @@ const VideoPlayer: FC<VideoPlayerProps> = ({ videoSrc }) => {
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [currentDuration, setCurrentDuration] = useState("00:00");
   const [percentCompleted, setPercentCompleted] = useState(0);
-  const [, setMuted] = useState(false);
+  const [isMuted, setMuted] = useState(false);
+  const [totalDuration, setTotalDuration] = useState("00:00");
   const [volume, setVolume] = useState(1);
   const videoRef = useRef<HTMLVideoElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
@@ -135,14 +136,9 @@ const VideoPlayer: FC<VideoPlayerProps> = ({ videoSrc }) => {
     [timestampFormatter],
   );
 
-  const totalDuration = useMemo(
-    () => formatTimestamp(videoRef.current?.duration || 0),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
-  );
-
   const updateTimestamp = () => {
     setCurrentDuration(formatTimestamp(videoRef.current?.currentTime || 0));
+    setTotalDuration(formatTimestamp(videoRef.current?.duration || 0));
     setPercentCompleted(
       Math.round(
         (1000 * (videoRef.current?.currentTime || 0)) /
@@ -205,9 +201,9 @@ const VideoPlayer: FC<VideoPlayerProps> = ({ videoSrc }) => {
                 onClick={handleMute}
                 className=" opacity-70 transition-opacity hover:opacity-100 cursor-pointer"
               >
-                {videoRef.current?.muted ? (
+                {isMuted ? (
                   <MdVolumeOff />
-                ) : videoRef.current && videoRef.current?.volume > 0.5 ? (
+                ) : volume > 0.5 ? (
                   <MdVolumeUp />
                 ) : (
                   <MdVolumeDown />
